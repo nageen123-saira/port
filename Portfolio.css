@@ -1,0 +1,50 @@
+*{
+    margin:0;
+    padding:0;
+
+}
+body{
+
+font-family: open sans
+
+}
+
+a{
+    color:white;
+    text-decoration:underline;
+}
+.wrapper .sidenav{
+    position: fixed;
+    left: 0;
+    top:0; 
+    width:20vw;
+    height:100vh;
+    background: rgba(255, 192, 203, 0.868);
+
+}.wrapper .sidenav h1{
+
+    color :red;
+    text-align: center;
+    line-height: 90px;
+    border-bottom:1px dotted black ;
+   /* margin-bottom: 50px;*/
+
+}
+.wrapper .sidenav ul li{
+list-style: none;
+padding: 15px;
+border-bottom:1px solid rgba(0, 0, 0, 0.1);
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+}
+i {
+margin: right 8px;
+
+
+
+}
+.wrapper .main-content{
+width:80vw;
+margin-left:20vw ;
+
+}
