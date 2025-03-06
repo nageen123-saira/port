@@ -4,15 +4,7 @@ function toggleMenu() {
     sidebar.classList.toggle('active');
 }
 
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
+
 
 // Detect Mobile and Adjust Styles
 function checkMobile() {
