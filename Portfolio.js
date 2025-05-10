@@ -1,32 +1,21 @@
-// Toggle Sidebar for Mobile View
-function toggleMenu() {
-    var sidebar = document.querySelector('.sidenav');
-    sidebar.classList.toggle('active');
-}
+const toggleBtn = document.getElementById("theme-toggle");
+  const body = document.body;
 
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
+  // Load saved mode
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.classList.add(savedTheme);
+  toggleBtn.textContent = savedTheme === "dark" ? "☀️" : "🌙";
 
-// Detect Mobile and Adjust Styles
-function checkMobile() {
-    if (window.innerWidth <= 768) {
-        document.querySelector('.sidenav').style.width = "100%";
-        document.querySelector('.main-content').style.width = "100%";
-        document.querySelector('.main-content').style.marginLeft = "0";
+  // Toggle and save mode
+  toggleBtn.addEventListener("click", () => {
+    if (body.classList.contains("light")) {
+      body.classList.replace("light", "dark");
+      toggleBtn.textContent = "☀️";
+      localStorage.setItem("theme", "dark");
     } else {
-        document.querySelector('.sidenav').style.width = "20vw";
-        document.querySelector('.main-content').style.width = "80vw";
-        document.querySelector('.main-content').style.marginLeft = "20vw";
+      body.classList.replace("dark", "light");
+      toggleBtn.textContent = "🌙";
+      localStorage.setItem("theme", "light");
     }
-}
+  });
 
-// Run on page load & resize
-window.onload = checkMobile;
-window.onresize = checkMobile;
